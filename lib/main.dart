@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'You have pushed the button this many times:',
             ),
             const Text(
-              'Thanks our Dear Developer/Programmer',
+              'Thanks our Dear Developers/Programmers',
             ),
             Text(
               '$_counter',
