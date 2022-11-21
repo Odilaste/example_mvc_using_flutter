@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter MVC Exercice',
+      title: 'Flutter MVC Exercice UNILUK',
       theme: ThemeData(
 
         primarySwatch: Colors.blue,
@@ -60,6 +60,9 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             const Text(
               'You have pushed the button this many times:',
+            ),
+            const Text(
+              'Thanks',
             ),
             Text(
               '$_counter',
