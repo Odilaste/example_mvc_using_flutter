@@ -6,45 +6,26 @@ import 'package:mvc_exercise/models/exercise/exercise_model.dart';
 class ExerciseController {
   ExerciseController();
 
+  //Example of a class created automatically by Flutter MVC Generater
+/*
   void getter(BuildContext context) {
     ExerciseModel viewModel =
         Provider.of<ExerciseModel>(context, listen: false);
     //TODO Add code here for getter
     viewModel.getter();
   }
+*/
+  int _counter = 0;
+  int get get_counter => _counter;
 
-  void setter(BuildContext context) {
-    ExerciseModel viewModel =
-        Provider.of<ExerciseModel>(context, listen: false);
-    //TODO Add code here for setter
-    viewModel.setter();
-  }
-
-  void update(BuildContext context) {
-    ExerciseModel viewModel =
-        Provider.of<ExerciseModel>(context, listen: false);
-    //TODO Add code here for update
-    viewModel.update();
-  }
-
-  void remove(BuildContext context) {
-    ExerciseModel viewModel =
-        Provider.of<ExerciseModel>(context, listen: false);
-    //TODO Add code here for remove
-    viewModel.remove();
-  }
-
+  String title = "Exemple MVC Flutter";
+  String get get_title => title;
+  
   void incrementCounter(BuildContext context) {
     ExerciseModel viewModel =
         Provider.of<ExerciseModel>(context, listen: false);
 
     viewModel.incrementCounter();
-  }
-
-  int get_counter(BuildContext context) {
-    ExerciseModel viewModel =
-        Provider.of<ExerciseModel>(context, listen: false);
-
-    return viewModel.get_coounter;
+    _counter = viewModel.counter;
   }
 }

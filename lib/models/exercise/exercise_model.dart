@@ -2,19 +2,18 @@
 
 import 'package:flutter/material.dart';
 
-enum ExerciseModelStatus {
-  Ended,
-  Loading,
-  Error,
-}
+enum ExerciseModelStatus { Ended, Loading, Error }
 
 class ExerciseModel extends ChangeNotifier {
-  ExerciseModelStatus _status = ExerciseModelStatus.Error;
+  ExerciseModelStatus _status = ExerciseModelStatus.Loading;
   String _errorCode = "";
   String _errorMessage = "";
 
+  int _counter = 0;
+
   String get errorCode => _errorCode;
   String get errorMessage => _errorMessage;
+  int get counter => _counter;
   ExerciseModelStatus get status => _status;
 
   ExerciseModel();
@@ -23,14 +22,19 @@ class ExerciseModel extends ChangeNotifier {
     //TODO Add code here
   }
 
-  int _counter = 0;
-
   void incrementCounter() {
+    _status = ExerciseModelStatus.Loading;
+    // Method which will modify all value in widget thar are using variables found here
+    notifyListeners();
+
     _counter++;
+
+    _status = ExerciseModelStatus.Ended;
+    notifyListeners();
   }
 
-  int get get_coounter => _counter;
-
+  //Example of a class created automatically by Flutter MVC Generater
+/*
   void getter() {
     _status = ExerciseModelStatus.Loading;
     notifyListeners();
@@ -40,34 +44,6 @@ class ExerciseModel extends ChangeNotifier {
     _status = ExerciseModelStatus.Ended;
     notifyListeners();
   }
+*/
 
-  void setter() {
-    _status = ExerciseModelStatus.Loading;
-    notifyListeners();
-
-    //TODO Add code here
-
-    _status = ExerciseModelStatus.Ended;
-    notifyListeners();
-  }
-
-  void update() {
-    _status = ExerciseModelStatus.Loading;
-    notifyListeners();
-
-    //TODO Add code here
-
-    _status = ExerciseModelStatus.Ended;
-    notifyListeners();
-  }
-
-  void remove() {
-    _status = ExerciseModelStatus.Loading;
-    notifyListeners();
-
-    //TODO Add code here
-
-    _status = ExerciseModelStatus.Ended;
-    notifyListeners();
-  }
 }
