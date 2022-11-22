@@ -16,8 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter MVC Exercice UNILUK',
       theme: ThemeData(
-
-        primarySwatch: Colors.blue,
+        primarySwatch: Color.fromARGB(255, 18, 70, 112),
       ),
       home: const MyHomePage(title: 'This is a Flutter MVC Exercise'),
     );
@@ -27,7 +26,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
-
   final String title;
 
   @override
@@ -35,19 +33,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
-
         title: Text(widget.title),
       ),
       body: Center(
-
         child: Column(
-
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
@@ -57,14 +50,17 @@ class _MyHomePageState extends State<MyHomePage> {
               'Thanks our Dear Developers/Programmers',
             ),
             Text(
-              '$_counter',
+              //'$_counter',
+              '',
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () => {
+          //_incrementCounter
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.

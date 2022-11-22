@@ -29,6 +29,8 @@ class ExerciseModel extends ChangeNotifier {
     _counter++;
   }
 
+  int get get_coounter => _counter;
+
   void getter() {
     _status = ExerciseModelStatus.Loading;
     notifyListeners();

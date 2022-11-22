@@ -40,4 +40,11 @@ class ExerciseController {
 
     viewModel.incrementCounter();
   }
+
+  int get_counter(BuildContext context) {
+    ExerciseModel viewModel =
+        Provider.of<ExerciseModel>(context, listen: false);
+
+    return viewModel.get_coounter;
+  }
 }
